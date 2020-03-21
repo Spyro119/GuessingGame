@@ -1,4 +1,7 @@
 # Guessing Game
+require 'artii'
+
+a = Artii::Base.new
 
 def veryEasy 
     x = rand(11)
@@ -22,7 +25,7 @@ def veryEasy
     puts "Guess # #{num}"
     guess = gets.chomp.to_i
     end
-    puts "Congratulations! You guessed the right number : '#{x}' with #{num} guesses !"
+    puts "Congratulations! You guessed the right number :\n" + Artii::Base.new.asciify("#{x} with #{num} guesses!")
 end 
 
 def easy 
@@ -43,12 +46,14 @@ def easy
         elsif x > guess
             puts "Your guess : #{guess} is lesser the number, try again"
         elsif x == guess
-            puts "Congratulations! You guessed the right number : '#{x}' with #{num + 1} guesses!"
+            puts "Congratulations! You guessed the right number :\n" + Artii::Base.new.asciify("#{x} with #{num + 1} guesses!")
             break
         end
     end
     if guess != x 
-        puts "game over"
+        puts "Game over. The number was"
+        puts Artii::Base.new.asciify("#{x}")
+        
     end
 end 
 
@@ -70,12 +75,13 @@ def medium
         elsif x > guess
             puts "Your guess : #{guess} is lesser the number, try again"
         elsif x == guess
-            puts "Congratulations! You guessed the right number : '#{guess}' with #{num + 1} guesses!"
+            puts "Congratulations! You guessed the right number :\n" + Artii::Base.new.asciify("#{x} with #{num + 1} guesses!")
             break
         end
     end
     if guess != x 
-        puts "game over"
+        puts "Game over. The number was"
+        puts Artii::Base.new.asciify("#{x}")
     end
 end 
 
@@ -97,12 +103,13 @@ def hard
         elsif x > guess
             puts "Your guess : #{guess} is lesser the number, try again"
         elsif x == guess
-            puts "Congratulations! You guessed the right number : '#{guess}' with #{num + 1} guesses!"
+            puts "Congratulations! You guessed the right number :\n" + Artii::Base.new.asciify("#{x} with #{num + 1} guesses!")
             break
         end
     end
     if guess != x 
-        puts "game over"
+        puts "Game over. The number was"
+        puts Artii::Base.new.asciify("#{x}")
     end
 end 
 
@@ -124,19 +131,23 @@ def veryHard
         elsif x > guess
             puts "Your guess : #{guess} is lesser the number, try again"
         elsif x == guess
-            puts "Congratulations! You guessed the right number : '#{guess}' with #{num + 1} guesses!"
+            puts "Congratulations! You guessed the right number :\n" + Artii::Base.new.asciify("#{x} with #{num + 1} guesses!")
             break
         end
     end
     if guess != x 
-        puts "game over"
+        puts "Game over. The number was"
+        puts Artii::Base.new.asciify("#{x}")
     end
 end 
 
 def greet
-    puts "Welcome to a number guessing game!\n What is your name?"
+    puts "Welcome to a"
+    puts Artii::Base.new.asciify("Number guessing game!")
+    puts "What is your name?"
     name = gets.chomp
-    puts "Welcome #{name}! Type y whenever you are ready to start"
+    puts Artii::Base.new.asciify("Welcome #{name}!")
+    puts "Type y whenever you are ready to start"
     ready = gets.chomp
     while ready != "y" && ready != "yes"
         puts "Please type y or yes when you are ready"
@@ -203,5 +214,6 @@ def keepPlay
         puts "Thank you for trying my guessing game."
     end
 end
+
 
 greet()
