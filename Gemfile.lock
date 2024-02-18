@@ -1,4 +1,5 @@
 GEM
+  remote: https://rubygems.org/
   specs:
     artii (2.1.2)
     equatable (0.6.1)
@@ -23,8 +24,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  artii
-  tty-prompt
+  artii (~> 2.1)
+  tty-prompt (~> 0.21.0)
 
 BUNDLED WITH
-   2.1.4
+   2.2.33

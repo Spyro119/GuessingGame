@@ -1,7 +1,0 @@
-#gem
-
-#Prompt features
-gem 'tty-prompt'
-
-#Creates ASCII art
-gem 'artii'
